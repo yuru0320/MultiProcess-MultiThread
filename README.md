@@ -25,24 +25,16 @@ C++
 1. 根據使用者的檔名先去判斷檔案是否存在，若不存在則再輸入一次，反之則進行下一步驟。
 2. 使用者輸入要切成幾份後記錄為全域變數。
 3. 再根據使用者輸入的數字來判斷要進行何種方法。輸入非1-4則需重新輸入，輸入 0 則結束程式。
-* 方法一:
-
-將N個數目字直接進行BubbleSort，並顯示CPU執行之時間。
-* 方法二:
-
-將N個數目字切成K份，在一個process內對K份資料進行 BubbleSort 之後，再用同一個 process 作 MergeSort，並顯示CPU 執行之時間。
-* 方法三:
-
-將N個數目字切成K份，並由K個processes分別進行BubbleSort 之後，再用 process 作 MergeSort，並顯示 CPU 執行之時間。
-* 方法四:
-
-將N個數目字切成K份，並由K個threads分別進行BubbleSort 之後，再用 thread 作 MergeSort，並顯示 CPU 執行之時間。
+* 方法一:將N個數目字直接進行BubbleSort，並顯示CPU執行之時間。
+* 方法二:將N個數目字切成K份，在一個process內對K份資料進行 BubbleSort 之後，再用同一個 process 作 MergeSort，並顯示CPU 執行之時間。
+* 方法三:將N個數目字切成K份，並由K個processes分別進行BubbleSort 之後，再用 process 作 MergeSort，並顯示 CPU 執行之時間。
+* 方法四:將N個數目字切成K份，並由K個threads分別進行BubbleSort 之後，再用 thread 作 MergeSort，並顯示 CPU 執行之時間。
 
 # 分析結果和原因:
 <img width="552" alt="截圖 2022-10-07 下午5 21 31" src="https://user-images.githubusercontent.com/95215851/194520274-e364e27d-13b5-4dd7-a626-968f1bd09aa5.png">
 <img width="560" alt="截圖 2022-10-07 下午5 21 36" src="https://user-images.githubusercontent.com/95215851/194520306-6dd15272-dc12-47bc-8161-09113483a1cf.png">
 
-## 由此圖表可以得知在不同 N 值時:
+#### 由此圖表可以得知在不同 N 值時:
 方法一:
         效率最差的方式。因為所有資料用一個 bubbleSort 去執行。 bubbleSort 在資料量越大時所花費的時間越多，由其時間複雜度 O(2!) 可得知此結果。
         
