@@ -20,3 +20,12 @@ C++
         所有vector 經由兩個 vector 做 mergesort 合併成一個檔案後，以此類推，直至剩下一個 vector 後輸出檔案。
 * 方法四:將分成k份的vector，把bubblesort2k放置到thread的陣 列中，同時做 bubblesort，等待所有 thread 完成後，經由兩個 vector 做 mergesort 合併成一個檔案後。
         以此類推，直至剩下一個 vector 後輸出檔案。
+# 流程:
+使用者輸入檔案名稱，再輸入要切成幾份，最後輸入要執行的方法 1-4。
+1. 根據使用者的檔名先去判斷檔案是否存在，若不存在則再輸入一次，反之則進行下一步驟。
+2. 使用者輸入要切成幾份後記錄為全域變數。
+3. 再根據使用者輸入的數字來判斷要進行何種方法。輸入非1-4則需重新輸入，輸入 0 則結束程式。
+* 方法一，將N個數目字直接進行BubbleSort，並顯示CPU執行之時間。
+* 方法二，將N個數目字切成K份，在一個process內對K份資料進行 BubbleSort 之後，再用同一個 process 作 MergeSort，並顯示CPU 執行之時間。
+* 方法三，將N個數目字切成K份，並由K個processes分別進行BubbleSort 之後，再用 process 作 MergeSort，並顯示 CPU 執行之時間。
+* 方法四，將N個數目字切成K份，並由K個threads分別進行BubbleSort 之後，再用 thread 作 MergeSort，並顯示 CPU 執行之 時間
